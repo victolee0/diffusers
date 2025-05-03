@@ -97,7 +97,7 @@ def get_3d_sincos_pos_embed(
             The spatial dimension of positional embeddings. If an integer is provided, the same size is applied to both
             spatial dimensions (height and width).
         temporal_size (`int`):
-            The temporal dimension of postional embeddings (number of frames).
+            The temporal dimension of positional embeddings (number of frames).
         spatial_interpolation_scale (`float`, defaults to 1.0):
             Scale factor for spatial grid interpolation.
         temporal_interpolation_scale (`float`, defaults to 1.0):
@@ -169,7 +169,7 @@ def _get_3d_sincos_pos_embed_np(
             The spatial dimension of positional embeddings. If an integer is provided, the same size is applied to both
             spatial dimensions (height and width).
         temporal_size (`int`):
-            The temporal dimension of postional embeddings (number of frames).
+            The temporal dimension of positional embeddings (number of frames).
         spatial_interpolation_scale (`float`, defaults to 1.0):
             Scale factor for spatial grid interpolation.
         temporal_interpolation_scale (`float`, defaults to 1.0):
@@ -336,7 +336,7 @@ def get_1d_sincos_pos_embed_from_grid(embed_dim, pos, output_type="np"):
             " `from_numpy` is no longer required."
             "  Pass `output_type='pt' to use the new version now."
         )
-        deprecate("output_type=='np'", "0.33.0", deprecation_message, standard_warn=False)
+        deprecate("output_type=='np'", "0.34.0", deprecation_message, standard_warn=False)
         return get_1d_sincos_pos_embed_from_grid_np(embed_dim=embed_dim, pos=pos)
     if embed_dim % 2 != 0:
         raise ValueError("embed_dim must be divisible by 2")

@@ -501,7 +501,7 @@ class LattePipeline(DiffusionPipeline):
         # &amp
         caption = re.sub(r"&amp", "", caption)
 
-        # ip adresses:
+        # ip addresses:
         caption = re.sub(r"\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}", " ", caption)
 
         # article ids:
@@ -817,7 +817,7 @@ class LattePipeline(DiffusionPipeline):
 
                 # predict noise model_output
                 noise_pred = self.transformer(
-                    latent_model_input,
+                    hidden_states=latent_model_input,
                     encoder_hidden_states=prompt_embeds,
                     timestep=current_timestep,
                     enable_temporal_attentions=enable_temporal_attentions,
